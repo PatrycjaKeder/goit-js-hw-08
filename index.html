@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My HTML-page</title>
+    <script src="./js/gallery-1.js" defer></script>
+        <!-- Basic Lightbox CDN JS script & CSS stylesheet -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js" integrity="sha256-nMn34BfOxpKD0GwV5nZMwdS4e8SI8Ekz+G7dLeGE4XY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css" integrity="sha256-r7Neol40GubQBzMKAJovEaXbl9FClnADCrIMPljlx3E=" crossorigin="anonymous">
+<style>
+    li {list-style: none;}
+    body{ 
+      display: flex;
+      flex-direction: column;
+      align-items: center;}
+      
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 48px;
+        column-gap: 24px;
+        width: 1128px;
+        margin: 0 auto;
+    }
+    .gallery-image {
+        width: 360px;
+        height: 300px;
+    }
+    .paragraf{
+      color: white;
+      font-size: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+    <h1>Gallery</h1>
+    <p>Come and see, wonders of our gallery!</p>
+    <ul class="gallery" id="gallery"></ul>
+
+
+  <template id="galery-item-template">
+    <li class="gallery-item"> 
+      <a class="gallery-link" href="">
+        <img
+          class="gallery-image"
+          src="small-image.jpg"
+          data-source="large-image.jpg"
+          alt="Image description"
+        />
+      </a>
+    </li>
+  </template>
+  <template id="modal">
+    <div>
+      <img id="modal-image">
+        <p class="paragraf" id="modal-paragraf"></p>
+        <button>Close</button>
+    </div>
+  </template>
+
+</body>
